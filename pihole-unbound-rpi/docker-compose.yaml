@@ -1,0 +1,57 @@
+# obtained from
+# - https://github.com/JamesTurland/JimsGarage/blob/c4f2039/Unbound/docker-compose.yaml
+
+networks:
+  dns_net:              # name of the docker network
+    driver: bridge
+    ipam:
+      config:
+      - subnet: 10.0.0.0/24
+        gateway: 10.0.0.254
+
+services:
+  pihole:
+    container_name: pihole
+    hostname: pihole
+    image: pihole/pihole:2025.04.0
+    networks:
+      dns_net:
+        ipv4_address: 10.0.0.1
+    ports:
+      # DNS Ports
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "80:80/tcp"                   # Default HTTP Port
+      # - "443:443/tcp"                 # Default HTTPs Port. FTL will generate a self-signed certificate
+    environment:
+      # Set the appropriate timezone for your location from
+      # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones, e.g:
+      TZ: 'Europe/London'
+
+      # Set a password to access the web interface. Not setting one will result in a random password being assigned
+      FTLCONF_webserver_api_password: 'password'     # admin portal password. Random password used if env is not set
+
+      # DNS server(s) for Pi-hole to forward queries to, separated by a semicolon
+      FTLCONF_dns_upstreams: '10.0.0.2#53'           # using unbound dns
+      # FTLCONF_dns_upstreams: '1.1.1.1#53;1.0.0.1#53'    # using cloudeflare dns
+
+      # If using Docker's default `bridge` network setting the dns listening mode should be set to 'all'
+      FTLCONF_dns_listeningMode: 'all'
+    volumes:
+      - '/opt/docker/pihole/etc-pihole/:/etc/pihole/'
+      - '/opt/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
+
+    restart: unless-stopped
+  # unbound-rpi will have port 53 by default (according to it's dockerfile)
+  # make sure to send requests to unbound's ip on port 53
+  unbound:
+    container_name: unbound
+    image: mvance/unbound-rpi:1.22.0
+    networks:
+      dns_net:
+        ipv4_address: 10.0.0.2
+    # ports:
+    #   - "53/tcp"
+    #   - "53/udp"
+    restart: unless-stopped
+
