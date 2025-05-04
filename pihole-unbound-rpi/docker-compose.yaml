@@ -27,10 +27,10 @@ services:
     environment:
       # Set the appropriate timezone for your location from
       # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones, e.g:
-      TZ: 'Europe/London'
+      TZ: ${TIME_ZONE}
 
       # Set a password to access the web interface. Not setting one will result in a random password being assigned
-      FTLCONF_webserver_api_password: 'password'     # admin portal password. Random password used if env is not set
+      FTLCONF_webserver_api_password: ${ADMIN_PASSWORD}     # admin portal password. Random password used if env is not set
 
       # DNS server(s) for Pi-hole to forward queries to, separated by a semicolon
       FTLCONF_dns_upstreams: '10.0.0.2#53'           # using unbound dns
