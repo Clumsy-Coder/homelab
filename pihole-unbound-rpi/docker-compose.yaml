@@ -1,5 +1,6 @@
 # obtained from
 # - https://github.com/JamesTurland/JimsGarage/blob/c4f2039/Unbound/docker-compose.yaml
+# - https://discourse.pi-hole.net/t/installing-unbound-via-docker-compose/75641/5
 
 networks:
   dns_net:              # name of the docker network
