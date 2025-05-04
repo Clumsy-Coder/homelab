@@ -25,19 +25,15 @@ services:
       - "80:80/tcp"                   # Default HTTP Port
       # - "443:443/tcp"                 # Default HTTPs Port. FTL will generate a self-signed certificate
     environment:
-      # Set the appropriate timezone for your location from
-      # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones, e.g:
-      TZ: ${TIME_ZONE}
+      # https://docs.pi-hole.net/docker/configuration/
 
-      # Set a password to access the web interface. Not setting one will result in a random password being assigned
-      FTLCONF_webserver_api_password: ${ADMIN_PASSWORD}     # admin portal password. Random password used if env is not set
+      TZ: ${TIME_ZONE}                                      # time zone
+      FTLCONF_webserver_api_password: ${ADMIN_PASSWORD}     # admin password
 
-      # DNS server(s) for Pi-hole to forward queries to, separated by a semicolon
-      FTLCONF_dns_upstreams: '10.0.0.2#53'           # using unbound dns
-      # FTLCONF_dns_upstreams: '1.1.1.1#53;1.0.0.1#53'    # using cloudeflare dns
-
-      # If using Docker's default `bridge` network setting the dns listening mode should be set to 'all'
-      FTLCONF_dns_listeningMode: 'all'
+      # dns settings
+      FTLCONF_dns_upstreams: '10.0.0.2#53'                # using unbound dns
+      # FTLCONF_dns_upstreams: '1.1.1.1#53;1.0.0.1#53'      # using cloudflare dns
+      FTLCONF_dns_listeningMode: 'all'                    # If using Docker's default `bridge` network setting the dns listening mode should be set to 'all'
     volumes:
       - '/opt/docker/pihole/etc-pihole/:/etc/pihole/'
       - '/opt/docker/pihole/etc-dnsmasq.d/:/etc/dnsmasq.d/'
