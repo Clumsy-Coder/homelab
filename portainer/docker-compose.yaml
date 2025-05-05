@@ -9,7 +9,6 @@ services:
     container_name: portainer
     hostname: portainer
     ports:
-      - 8000:8000
       - 9443:9443
       - 9000:9000 # for http
     volumes:
