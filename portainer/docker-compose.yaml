@@ -3,7 +3,6 @@
 # obtained from
 # - https://github.com/JamesTurland/JimsGarage/blob/c4f2039/Portainer/docker-compose.yaml
 
-version: "3"
 services:
   portainer:
     image: portainer/portainer-ce:latest
