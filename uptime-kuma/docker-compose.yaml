@@ -1,0 +1,20 @@
+# monitor services
+#
+# obtained from
+# - https://github.com/louislam/uptime-kuma/blob/5bb329f/docker/docker-compose.yml
+# - https://github.com/JamesTurland/JimsGarage/blob/c4f2039/UptimeKuma/docker-compose.yaml
+#
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    hostname: uptime-kuma
+    ports:
+      - 3001:3001
+    volumes:
+      - /opt/docker/uptime-kuma:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock  # to monitor docker container status
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
