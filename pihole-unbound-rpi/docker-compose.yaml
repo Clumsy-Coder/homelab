@@ -23,7 +23,7 @@ services:
       - "53:53/tcp"
       - "53:53/udp"
       - "8080:80/tcp"                   # Default HTTP Port
-      # - "8443:443/tcp"                 # Default HTTPs Port. FTL will generate a self-signed certificate
+      - "8443:443/tcp"                  # Default HTTPs Port. FTL will generate a self-signed certificate
     environment:
       # https://docs.pi-hole.net/docker/configuration/
 
