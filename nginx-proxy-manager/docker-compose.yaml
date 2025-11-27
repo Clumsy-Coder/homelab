@@ -1,0 +1,31 @@
+# obtained from
+# - https://forums.lawrencesystems.com/t/nginx-proxy-manager-docker/24147
+# - https://nginxproxymanager.com/setup/
+
+services:
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:2.13.5
+    container_name: nginx-proxy-manager
+    restart: unless-stopped
+    ports:
+      # These ports are in format <host-port>:<container-port>
+      - '80:80'   # Public HTTP Port
+      - '443:443' # Public HTTPS Port
+      - '81:81'   # Admin Web Port
+      # Add any other Stream port you want to expose
+      # - '21:21' # FTP
+    environment:
+      TZ: ${TIME_ZONE}
+      # Uncomment this if IPv6 is not enabled on your host
+      DISABLE_IPV6: 'true'
+    volumes:
+      - /opt/stacks/nginx-proxy-manager/data:/data
+      - /opt/stacks/nginx-proxy-manager/letsencrypt:/etc/letsencrypt
+    healthcheck:
+      test: ["CMD", "/usr/bin/check-health"]
+      interval: 10s
+      timeout: 3s
+
+networks:
+  proxy:
+    external: true
