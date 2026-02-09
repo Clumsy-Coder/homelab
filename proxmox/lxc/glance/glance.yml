@@ -1,0 +1,28 @@
+# obtained from
+# - https://github.com/TechHutTV/homelab/blob/376c5f9/glance.yml
+# Note: I installed this with the Proxmox Helper Script. So this config file is in /opt/glance. If you run with docker, there may be multiple configuration files.
+theme:
+  background-color: 0 0 16
+  primary-color: 43 59 81
+  positive-color: 61 66 44
+  negative-color: 6 96 59
+pages:
+  - name: Homelab
+    width: slim
+    hide-desktop-navigation: false
+    center-vertically: true
+    columns:
+
+      - size: small
+        widgets:
+          - type: dns-stats
+            service: pihole
+            url: https://pihole.pve1.homebytes.cc
+            token: 12345abcdefghijk
+
+          # - type: repository
+          #   repository: TechHutTV/homelab
+          #   pull-requests-limit: 5
+          #   issues-limit: 3
+          #   commits-limit: 3
+
