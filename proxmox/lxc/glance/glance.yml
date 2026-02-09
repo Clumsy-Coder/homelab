@@ -26,3 +26,19 @@ pages:
           #   issues-limit: 3
           #   commits-limit: 3
 
+      - size: full
+        widgets:
+          - type: search
+            autofocus: true
+            search-engine: google
+            new-tab: true
+            bangs:
+              - title: YouTube
+                shortcut: "@yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
+              - title: Github
+                shortcut: "@gh"
+                url: https://github.com/search?q={QUERY}&type=repositories
+              - title: DuckDuckGo
+                shortcut: "@ddg"
+                url: https://www.duckduckgo.com/?q={QUERY}
