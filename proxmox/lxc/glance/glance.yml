@@ -13,12 +13,12 @@ pages:
     center-vertically: true
     columns:
 
-      - size: small
-        widgets:
-          - type: dns-stats
-            service: pihole
-            url: https://pihole.pve1.homebytes.cc
-            token: 12345abcdefghijk
+      # - size: small
+      #   widgets:
+      #     - type: dns-stats
+      #       service: pihole
+      #       url: https://pihole.pve1.homebytes.cc
+      #       token: 12345abcdefghijk
 
           # - type: repository
           #   repository: TechHutTV/homelab
