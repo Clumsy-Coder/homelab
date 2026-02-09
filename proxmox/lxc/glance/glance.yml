@@ -71,3 +71,16 @@ pages:
   #               alt-status-codes:
   #                 - 401
   #                 - 403
+
+          - type: monitor
+            cache: 1m
+            title: Services rpi1
+            sites:
+              - title: Pi-Hole
+                url: https://pihole.rpi1.homebytes.cc/admin
+                check-url: https://192.168.1.253:8443/admin
+                icon: di:pi-hole
+              - title: NGINX Proxy Manager
+                url: https://proxy.rpi1.homebytes.cc
+                check-url: http://192.168.1.253:81/
+                icon: di:nginx
