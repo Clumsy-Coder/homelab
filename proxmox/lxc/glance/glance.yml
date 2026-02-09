@@ -60,6 +60,10 @@ pages:
                 url: https://proxy.pve1.homebytes.cc
                 check-url: http://192.168.1.246:81/
                 icon: di:nginx
+              - title: Uptime kuma
+                url: https://uptime.pve1.homebytes.cc
+                check-url: http://192.168.1.245:3001/
+                icon: di:uptime-kuma
   #             - title: OctoPrint
   #               url: https://3d.hopki.net/
   #               check-url: http://10.0.0.71
