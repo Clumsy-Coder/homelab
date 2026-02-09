@@ -64,6 +64,10 @@ pages:
                 url: https://uptime.pve1.homebytes.cc
                 check-url: http://192.168.1.245:3001/
                 icon: di:uptime-kuma
+              - title: Speedtest tracker
+                url: https://speedtest.pve1.homebytes.cc
+                check-url: http://192.168.1.244:80/
+                icon: di:speedtest-tracker
   #             - title: OctoPrint
   #               url: https://3d.hopki.net/
   #               check-url: http://10.0.0.71
