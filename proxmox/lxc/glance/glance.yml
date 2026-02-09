@@ -42,3 +42,32 @@ pages:
               - title: DuckDuckGo
                 shortcut: "@ddg"
                 url: https://www.duckduckgo.com/?q={QUERY}
+
+          - type: monitor
+            cache: 1m
+            title: Services pve1
+            sites:
+              - title: Proxmox
+                url: https://pve1.homebytes.cc
+                check-url: https://192.168.1.248:8006
+                allow-insecure: true
+                icon: di:proxmox
+              - title: Pi-Hole
+                url: https://pihole.pve1.homebytes.cc/admin
+                check-url: https://192.168.1.247:443
+                icon: di:pi-hole
+              - title: NGINX Proxy Manager
+                url: https://proxy.pve1.homebytes.cc
+                check-url: http://192.168.1.246:81/
+                icon: di:nginx
+  #             - title: OctoPrint
+  #               url: https://3d.hopki.net/
+  #               check-url: http://10.0.0.71
+  #               icon: di:octoprint
+  #             - title: Proxmox Backup Server
+  #               url: https://backup.hopki.net/
+  #               check-url: https://10.0.0.251:8007
+  #               icon: di:proxmox-light
+  #               alt-status-codes:
+  #                 - 401
+  #                 - 403
