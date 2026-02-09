@@ -88,3 +88,7 @@ pages:
                 url: https://proxy.rpi1.homebytes.cc
                 check-url: http://192.168.1.253:81/
                 icon: di:nginx
+              - title: Uptime kuma
+                url: https://uptime.rpi1.homebytes.cc
+                check-url: http://192.168.1.253:3001/
+                icon: di:uptime-kuma
