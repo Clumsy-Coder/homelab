@@ -86,7 +86,7 @@ pages:
             sites:
               - title: Pi-Hole
                 url: https://pihole.rpi1.homebytes.cc/admin
-                check-url: https://192.168.1.253:8443/admin
+                check-url: https://pihole.rpi1.homebytes.cc/admin
                 icon: di:pi-hole
               - title: NGINX Proxy Manager
                 url: https://proxy.rpi1.homebytes.cc
