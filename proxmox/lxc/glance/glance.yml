@@ -96,3 +96,8 @@ pages:
                 url: https://uptime.rpi1.homebytes.cc
                 check-url: http://192.168.1.253:3001/
                 icon: di:uptime-kuma
+              - title: Portainer
+                url: https://portainer.rpi1.homebytes.cc
+                check-url: https://portainer.rpi1.homebytes.cc
+                icon: di:portainer-alt
+
