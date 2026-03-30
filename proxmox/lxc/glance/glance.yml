@@ -58,7 +58,7 @@ pages:
                 icon: di:pi-hole
               - title: NGINX Proxy Manager
                 url: https://proxy.pve1.homebytes.cc
-                check-url: http://192.168.1.246:81/
+                check-url: https://proxy.pve1.homebytes.cc
                 icon: di:nginx
               - title: Uptime kuma
                 url: https://uptime.pve1.homebytes.cc
