@@ -54,7 +54,7 @@ pages:
                 icon: di:proxmox
               - title: Pi-Hole
                 url: https://pihole.pve1.homebytes.cc/admin
-                check-url: https://192.168.1.247:443
+                check-url: https://pihole.pve1.homebytes.cc/admin
                 icon: di:pi-hole
               - title: NGINX Proxy Manager
                 url: https://proxy.pve1.homebytes.cc
