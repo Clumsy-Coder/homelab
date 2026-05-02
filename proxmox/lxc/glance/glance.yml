@@ -68,6 +68,10 @@ pages:
                 url: https://speedtest.pve1.homebytes.cc
                 check-url: http://192.168.1.244:80/
                 icon: sh:speedtest-tracker
+              - title: Homebox
+                url: https://homebox.pve1.homebytes.cc/
+                check-url: https://homebox.pve1.homebytes.cc/
+                icon: di:homebox
   #             - title: OctoPrint
   #               url: https://3d.hopki.net/
   #               check-url: http://10.0.0.71
