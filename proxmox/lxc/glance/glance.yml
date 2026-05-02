@@ -101,3 +101,11 @@ pages:
                 check-url: https://portainer.rpi1.homebytes.cc
                 icon: di:portainer-alt
 
+          - type: monitor
+            cache: 1m
+            title: Services 3D-printing
+            sites:
+              - title: hephaestus-monoprice
+                url: https://hephaestus-monoprice.homebytes.cc/
+                check-url: https://hephaestus-monoprice.homebytes.cc/
+                icon: di:octoprint
